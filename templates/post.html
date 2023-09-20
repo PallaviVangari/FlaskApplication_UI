@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post['title'] }}</title>
+</head>
+<body>
+    <h1>{{ post['title'] }}</h1>
+    <p>{{ post['content'] }}</p>
+    <a href="{{ url_for('update', post_id=post['id']) }}">Edit</a>
+    <form action="{{ url_for('delete', post_id=post['id']) }}" method="post">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
