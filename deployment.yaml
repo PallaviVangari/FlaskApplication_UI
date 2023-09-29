@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-service-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ui-service
+  template:
+    metadata:
+      labels:
+        app: ui-service
+    spec:
+      containers:
+      - name: ui-service
+        image: palsv89/ui-service-repo:latest
+        ports:
+        - containerPort: 5001
